@@ -22,7 +22,8 @@
       }
     },
     mounted () {
-      this.$http.get('posts').then((response) => {
+      this.$hello = this.$resource('posts{/id}')
+      this.$hello.query().then((response) => {
         response.json().then((data) => {
           this.posts = data
         })
