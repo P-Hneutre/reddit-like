@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>{{ comment.name }}</h1>
-    <h3>{{ comment.body }}</h3>
+    <h3>{{ comment.name }}</h3>
+    <p>{{ comment.body }}</p>
   </div>
 </template>
 

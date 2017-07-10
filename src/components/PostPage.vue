@@ -1,8 +1,16 @@
 <template>
-  <div>
+  <div class="ui container">
     <h1>Post Page</h1>
-    <h4>--{{ id }}--</h4>
+    <h2>Post number {{ id }}:</h2>
     <post v-bind:post="post"></post>
+    <div class="ui form">
+      <div class="field">
+        <label>User Text {{ comment }}</label>
+        <textarea v-model="comment"></textarea>
+        <button v-on:click="postComment" class="ui button">Submit</button>
+      </div>
+    </div>
+    <h2>Comments:</h2>
     <div v-for="comment in comments">
       <comment v-bind:comment="comment"></comment>
     </div>
@@ -21,7 +29,8 @@
     data () {
       return {
         post: Object,
-        comments: Object
+        comments: Object,
+        comment: ''
       }
     },
     mounted () {
@@ -38,6 +47,19 @@
         })
       }, () => {
       })
+    },
+    methods: {
+      postComment (event) {
+        console.log(event)
+        console.log(this.comment)
+
+        if (this.comment !== '') {
+          this.$post.save({title: 'foo', body: 'bar', userId: 1}).then((response) => {
+            console.log(response)
+          }, () => {
+          })
+        }
+      }
     }
   }
 </script>
