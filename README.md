@@ -1,7 +1,8 @@
 # reddit-like
 
 > Single Page App with VueJS
-> See the API [repository](https://github.com/P-Hneutre/reddit-like-api)
+
+To See the API repository click [here](https://github.com/P-Hneutre/reddit-like-api)
 
 ## Build Setup
 
@@ -18,5 +19,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
