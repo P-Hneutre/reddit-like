@@ -1,6 +1,7 @@
 # reddit-like
 
-> VueJS + NodeJS
+> Single Page App with VueJS
+> See the API [repository](https://github.com/P-Hneutre/reddit-like-api)
 
 ## Build Setup
 
