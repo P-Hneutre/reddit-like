@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>{{ comment.name }}</h3>
     <p>{{ comment.body }}</p>
   </div>
 </template>

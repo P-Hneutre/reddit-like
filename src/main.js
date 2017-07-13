@@ -8,7 +8,7 @@ import router from './router'
 Vue.config.productionTip = false
 Vue.use(VueResource)
 
-Vue.http.options.root = 'http://jsonplaceholder.typicode.com'
+Vue.http.options.root = 'http://localhost:3000'
 
 /* eslint-disable no-new */
 new Vue({

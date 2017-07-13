@@ -1,7 +1,7 @@
 <template>
   <div class="ui container">
     <h1>Post Page</h1>
-    <h2>Post number {{ id }}:</h2>
+    <h2>Post number {{ id }}</h2>
     <post v-bind:post="post"></post>
     <div class="ui form">
       <div class="field">
@@ -11,7 +11,7 @@
       </div>
     </div>
     <h2>Comments:</h2>
-    <div v-for="comment in comments">
+    <div v-for="comment in post.comments">
       <comment v-bind:comment="comment"></comment>
     </div>
   </div>
@@ -23,7 +23,7 @@
   import Comment from './Comment'
 
   export default {
-    components: { Post, Comment },
+    components: {Post, Comment},
     name: 'postPage',
     props: ['id'],
     data () {
@@ -35,29 +35,28 @@
     },
     mounted () {
       this.$post = this.$resource('posts{/id}{/term}')
-      this.$post.get({id: this.id}).then((response) => {
-        response.json().then((data) => {
-          this.post = data
-        })
-      }, () => {
-      })
-      this.$post.query({id: this.id, term: 'comments'}).then((response) => {
-        response.json().then((data) => {
-          this.comments = data
-        })
-      }, () => {
-      })
+      this.getPost()
     },
     methods: {
+      getPost () {
+        this.$post.get({id: this.id}).then((response) => {
+          response.json().then((data) => {
+            this.post = data
+          })
+        }, () => {
+        })
+      },
+
       postComment (event) {
         console.log(event)
         console.log(this.comment)
 
         if (this.comment !== '') {
-          this.$post.save({title: 'foo', body: 'bar', userId: 1}).then((response) => {
-            console.log(response)
-          }, () => {
-          })
+          this.$post.save({id: this.id, term: 'comments'}, {userId: this.post.userId, body: this.comment})
+            .then((response) => {
+              this.comment = ''
+              this.getPost()
+            }, () => { })
         }
       }
     }

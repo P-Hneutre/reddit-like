@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link :to="{name: 'postPage', params: {id: post.id} }" class="item"><h3>{{ post.title }}</h3></router-link>
+    <router-link :to="{name: 'postPage', params: {id: post._id} }" class="item"><h3>{{ post.title }}</h3></router-link>
     <p>{{ post.body }}</p>
   </div>
 </template>
