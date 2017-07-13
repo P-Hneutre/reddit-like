@@ -53,7 +53,7 @@
 
         if (this.comment !== '') {
           this.$post.save({id: this.id, term: 'comments'}, {userId: this.post.userId, body: this.comment})
-            .then((response) => {
+            .then(() => {
               this.comment = ''
               this.getPost()
             }, () => { })

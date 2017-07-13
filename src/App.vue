@@ -5,7 +5,7 @@
         <router-link :to="{name: 'root'}" class="header item">Welcome</router-link>
         <!--<router-link :to="{name: '', params: {id:1} }" class="item">Article</router-link>-->
         <div class="right menu">
-          <router-link :to="{name: ''}" class="item">Sign Up</router-link>
+          <router-link :to="{name: 'signupPage'}" class="item">Sign Up</router-link>
           <router-link :to="{name: ''}" class="item">Log In</router-link>
         </div>
       </div>
