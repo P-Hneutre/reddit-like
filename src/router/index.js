@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Index from '@/pages/IndexPage'
 
 // lazy loading
-const PostPage = () => import('@/components/PostPage')
-const SignupPage = () => import('@/components/SignupPage')
+const PostPage = () => import('@/pages/PostPage')
+const SignupPage = () => import('@/pages/SignupPage')
 
 Vue.use(Router)
 
@@ -13,7 +13,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Hello,
+      component: Index,
       name: 'root'
     },
     {

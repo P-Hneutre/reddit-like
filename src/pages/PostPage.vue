@@ -19,8 +19,8 @@
 
 <script>
 
-  import Post from './Post'
-  import Comment from './Comment'
+  import Post from '../components/Post'
+  import Comment from '../components/Comment'
 
   export default {
     components: {Post, Comment},

@@ -11,7 +11,7 @@
 
 <script>
 
-  import Post from './Post'
+  import Post from '../components/Post'
 
   export default {
     components: { Post },
